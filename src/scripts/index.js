@@ -36,7 +36,7 @@ function getNews() {
 
                 //patch002 none != none -> style="transform: translateX(50px)"
 
-                output +='<li class="article" style="transform: translateX(1px)">'+
+                output +='<li class="article" style="transform: translateX(13px)">'+
                     '<div class="card p-1" style="width: 15rem;display:none"><img src="'+image+'" class="article-img" alt="..."></div> '+ //patch005
                     '<div class="card p-1" style="width: 15rem;"><img src="'+image+'" class="card-img-top article-img" alt="..."> '+
                     
@@ -99,7 +99,7 @@ function searchNews() {
             var urls = obj[i].url;
             var image = obj[i].urlToImage;
 
-            output +='<li class="article" style="transform: translateX(1px)">'+
+            output +='<li class="article" style="transform: translateX(13px)">'+
                     '<div class="card p-1" style="width: 15rem;display:none"><img src="'+image+'" class="article-img" alt="..."></div> '+ //patch005
                     '<div class="card p-2" style="width: 17rem;"><img src="'+image+'" class="card-img-top article-img" alt="..."> '+
                     
