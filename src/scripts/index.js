@@ -36,7 +36,7 @@ function getNews() {
 
                 output +='<li class="article">'+
                     '<div class="card p-1" style="width: 15rem;"><img src="'+image+'" class="card-img-top article-img" alt="..."> '+
-                    '<div class="card p-1" style="width: 15rem;display:none"><img src="'+image+'" class="article-img" alt="..."> '+ //patch005
+                    '<div class="card p-1" style="width: 15rem;display:none"><img src="'+image+'" class="article-img" alt="..."></div> '+ //patch005
                     '<div class="card-body">'+
                     '<h2 class="article-title">'+titles.substring(0,70)+'</h2>'+
                     '<p class="article-description">'+descriptions.substring(0,100)+'</p>'+
@@ -58,6 +58,9 @@ getNews();
 function searchNews() {
 
     var query = document.getElementById('search').value;
+
+    
+
     // alert('search' + '    ' + query);
 
     //
@@ -95,7 +98,7 @@ function searchNews() {
 
             output +='<li class="article">'+
                     '<div class="card p-2" style="width: 17rem;"><img src="'+image+'" class="card-img-top article-img" alt="..."> '+
-                    '<div class="card p-1" style="width: 15rem;display:none"><img src="'+image+'" class="article-img" alt="..."> '+ //patch005
+                    '<div class="card p-1" style="width: 15rem;display:none"><img src="'+image+'" class="article-img" alt="..."></div> '+ //patch005
                     '<div class="card-body">'+
                     '<h2 class="article-title">'+titles.substring(0,70)+'</h2>'+
                     '<p class="article-description">'+descriptions.substring(0,100)+'</p>'+
@@ -112,7 +115,7 @@ function searchNews() {
         
         document.getElementById('news-articles').innerHTML = '';
 
-        document.getElementById('notfound').innerHTML = 'No article was found on the search';
+        document.getElementById('notfound').innerHTML = 'No article was found on the search.';
     }
 
     })
@@ -120,7 +123,12 @@ function searchNews() {
 
 document.getElementById('search').addEventListener('keypress', function (e) {
     if (e.keyCode === 13) {
-        searchNews();
+
+        var query = document.getElementById('search').value;
+
+        query=='' ? getNews() : searchNews();
+
+        // searchNews();
     }
 }, false);
 
