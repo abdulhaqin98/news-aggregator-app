@@ -70,7 +70,7 @@ function searchNews() {
 
     // const url = 'http://newsapi.org/v2/everything?q='+'apple'+'&apiKey=6f1cacbf2bae46faa35d5a9db3005c04';
     
-    const url = 'http://newsapi.org/v2/everything?q=' + query + '&apiKey=' + apikey;
+    const url = 'https://newsapi.org/v2/everything?q=' + query + '&apiKey=' + apikey;
     
     fetch(url)
     .then((res) => res.json())
